@@ -5,21 +5,22 @@ import LoginForm from "./components/LoginForm";
 function App() {
 
   const adminUser = {
-    email: "admin@admin.com",
+    name: "admin",
+    username: "admin",
     password: "admin123"
   }
 
-  const [user, setUser] = useState({name: "", email: ""});
+  const [user, setUser] = useState({name: "", username: ""});
   const [error, setError] = useState("");
 
   const Login = details =>{
     console.log(details);
 
-    if(details.email === adminUser.email && details.password === adminUser.password){
+    if(details.username === adminUser?.username && details.password === adminUser?.password){
       console.log("logged in")
       setUser({
         name: details.name,
-        email: details.email
+        username: details.username
       });
     }else{
       console.log("details do not match!")
@@ -28,14 +29,14 @@ function App() {
   }
 
   const Logout = () => {
-    setUser({name: "", email: ""});
+    setUser({name: "", username: ""});
   }
 
   return (
     <div className="App">
-      {(user.email !== "") ? (
+      {(user.username !== "") ? (
         <div className="welcome">
-          <h2>Welcome, <span> {user.name}</span></h2>  
+          <h2>Welcome, <span> {adminUser.name}</span></h2>  
           <button onClick={Logout}>Logout</button>
         </div>
       ): (

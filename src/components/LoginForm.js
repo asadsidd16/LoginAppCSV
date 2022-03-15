@@ -1,17 +1,14 @@
 import React from 'react';
 import {useState} from 'react';
 import Papa from 'papaparse';
-// import ReactTable from 'react-table';
 
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({name: "", username: "", password: ""});
-    // eslint-disable-next-line
     const [rows, setRows] = React.useState([]);
-
+    //Logic for grabbing the csv data and parsing it using a library
     React.useEffect(() => {
         async function getData() {
             const response = await fetch('./logindata.csv')
-            console.log(response)
             const reader = response.body.getReader()
             const result = await reader.read() // raw array
             const decoder = new TextDecoder('utf-8')
@@ -19,18 +16,17 @@ function LoginForm({ Login, error }) {
             const results = Papa.parse(csv, { header: true }) // object with { data, errors, meta }
             const rows = results.data // array of objects
             setRows(rows)
-            console.log(results)
-            console.log("Row data", rows)
-            console.log("CSV", csv)
         }
         getData()
     },[])
 
-    const submitHandler = e => {
+    //On form submission it sends the rows and details objects to login function for the check
+    const submitHandler = ( e )=> {
         e.preventDefault();
-
-        Login(details);
+        console.log(rows)
+        Login(details, rows);
     }
+
   return (
         <form onSubmit={submitHandler}>
             <div className="form-inner"> 

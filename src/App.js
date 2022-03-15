@@ -1,33 +1,32 @@
 import React from "react";
 import {useState} from "react";
 import LoginForm from "./components/LoginForm";
+import hero_banner from './assets/hero_banner.jpg'; 
+
 
 function App() {
-
-  const adminUser = {
-    name: "admin",
-    username: "admin",
-    password: "admin123"
-  }
-
   const [user, setUser] = useState({name: "", username: ""});
   const [error, setError] = useState("");
 
-  const Login = details =>{
-    console.log(details);
-
-    if(details.username === adminUser?.username && details.password === adminUser?.password){
-      console.log("logged in")
-      setUser({
-        name: details.name,
-        username: details.username
-      });
-    }else{
-      console.log("details do not match!")
-      setError("details do not match!")
+  //Logic for looping through row object and checking if its equal to users input 
+  const Login = (details, rows) => {
+    for(let i=0; i<rows?.length;++i){
+      if(details?.username === rows[i]?.Username && details?.password === rows[i]?.Password){
+        setUser({
+              name: rows[i].Name,
+              username: rows[i].Username
+        });
+      }
     }
-  }
+    //Form validation for invalid inputs
+    if(user==={name:"", username:""}){
+      setError("Invalid Credentials")
+    }else{
+      setError("Invalid Credentials")
+    }
 
+  }
+  //Name and username are set to empty strings
   const Logout = () => {
     setUser({name: "", username: ""});
   }
@@ -36,7 +35,8 @@ function App() {
     <div className="App">
       {(user.username !== "") ? (
         <div className="welcome">
-          <h2>Welcome, <span> {adminUser.name}</span></h2>  
+          <h2>Welcome, <span> {user.name}</span></h2>  
+          <img src={hero_banner} className="img" alt="hero banner"/>
           <button onClick={Logout}>Logout</button>
         </div>
       ): (

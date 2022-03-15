@@ -19,7 +19,7 @@ function App() {
       }
     }
     //Form validation for invalid inputs
-    if(user==={name:"", username:""}){
+    if(user==={name:" ", username:" "}){
       setError("Invalid Credentials")
     }else{
       setError("Invalid Credentials")
@@ -29,6 +29,7 @@ function App() {
   //Name and username are set to empty strings
   const Logout = () => {
     setUser({name: "", username: ""});
+    setError("");
   }
 
   return (

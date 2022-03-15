@@ -36,9 +36,9 @@ function App() {
     <div className="App">
       {(user.username !== "") ? (
         <div className="welcome">
-          <h2>Welcome, <span> {user.name}</span></h2>  
+          <h2><span> Welcome, {user.name}</span></h2>  
           <img src={hero_banner} className="img" alt="hero banner"/>
-          <button onClick={Logout}>Logout</button>
+          <button onClick={Logout} style={{position:'absolute',top:0,right:0}}>Logout</button>
         </div>
       ): (
         <LoginForm Login={Login} error={error}/>

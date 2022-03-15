@@ -1,14 +1,12 @@
 # Xcentium
-# A coding challenge in React to build a login application
+# A coding challenge in Reactjs to build a login application validated using a csv file
+# To run application make sure to have Reactjs dependencies installed
+# Node >= 14.0.0 and npm >= 5.6 are required
 
-<!-- import {readString} from "react-papaparse"
-import csvPath from "../data/info.csv";
+In the project directory, you can run:
 
-console.log(csvPath);
+Dependicies: npm install
 
-// Parse local CSV file
-fetch(csvPath)
-    .then(rs => rs.text())
-    .then(text => {
-        console.log(readString(text));
-}); -->
+npm start
+
+Runs the app in the development mode.

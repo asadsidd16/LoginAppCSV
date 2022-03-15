@@ -93,15 +93,16 @@ form .form-inner .form-group input:focus{
 form .form-inner input[type="submit"],
 .welcome button{
     display: inline-block;
-    padding: 10px 15px !important;
-    border-radius: 8px;
+    padding: 13px 18px !important;
+    margin-right: 10px!important;
     margin-top: 5px!important;
+    border-radius: 8px;
     background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
     color: white;
-    font-weight: 700;
+    font-weight: 850;
     cursor: pointer;
 }
 

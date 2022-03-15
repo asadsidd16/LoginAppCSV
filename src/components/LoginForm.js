@@ -5,7 +5,7 @@ import Papa from 'papaparse';
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({name: "", username: "", password: ""});
     const [rows, setRows] = React.useState([]);
-    //Logic for grabbing the csv data and parsing it using a library
+    //Logic for grabbing the csv data and parsing it using Papaparse npm library
     React.useEffect(() => {
         async function getData() {
             const response = await fetch('./logindata.csv')

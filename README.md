@@ -1,7 +1,9 @@
 # Xcentium
 # A coding challenge in Reactjs to build a login application validated using a csv file
-# To run application make sure to have Reactjs dependencies installed
-# Node >= 14.0.0 and npm >= 5.6 are required
+
+
+To run application make sure to have Reactjs dependencies installed
+Node >= 14.0.0 and npm >= 5.6 are required
 
 In the project directory, you can run:
 

@@ -7,7 +7,7 @@ Node >= 14.0.0 and npm >= 5.6 are required
 
 In the project directory, you can run:
 
-Dependicies: npm install
+Dependencies: npm install
 
 npm start
 

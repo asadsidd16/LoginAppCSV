@@ -1,4 +1,4 @@
-# Xcentium
+# Login application
 # A coding challenge in Reactjs to build a login application validated using a csv file
 
 

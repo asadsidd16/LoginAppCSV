@@ -12,3 +12,15 @@ Dependencies: npm install
 npm start
 
 Runs the app in the development mode.
+
+
+Login Users && password:
+
+Login: John 
+Password: 1234567
+
+Login: Mary 
+Password: 1111111
+
+Login: johndoe 
+Password: 222222
